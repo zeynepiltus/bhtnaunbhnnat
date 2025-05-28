@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #4b1c2f, #8a1e3f);
+      color: white;
+      font-family: 'Georgia', serif;
+      text-align: center;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 4rem;
+      font-weight: bold;
+      margin-bottom: 2rem;
+    }
+
+    button {
+      padding: 1rem 2rem;
+      margin: 1rem;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      color: white;
+      background-color: #6e1e3d;
+    }
+
+    button:hover {
+      background-color: #a02650;
+      transform: scale(1.05);
+    }
+
+    #popup {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      color: #4b1c2f;
+      padding: 2rem 3rem;
+      border-radius: 20px;
+      display: none;
+      font-size: 2rem;
+      z-index: 2;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    }
+
+    #message {
+      display: none;
+      font-size: 2rem;
+      padding: 2rem;
+      max-width: 700px;
+      margin: auto;
+      line-height: 1.5;
+      z-index: 2;
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>BIRI GULNUR MU DEDI??</h1>
+  <button onclick="showPopup()">🎻 TIKLAA</button>
+  <button onclick="showMessage()">💌 BUNA DA TIKLA</button>
+
+  <audio id="birthdaySong" src="https://cdn.pixabay.com/audio/2023/03/08/audio_3f230a8942.mp3"></audio>
+
+  <div id="popup">🎉 DOGUM GUNUN KUTLU OLSUN GULNURUMMM!!! 🎉</div>
+
+  <div id="message">
+    <p>💌Geçen sene o kadar yakın olmadığımız için çok da bir şey yapmamıştım, ama bu seneki doğum gününde daha özel bir şey yapmak istedim. Sadece hediye vermiyim dedim, o yüzden böyle birşeye giriştim nerden geldi aklıma valla bilmiyorum amaa İYİ Kİ HAYATIMDASIN İYİ Kİ ANNEN SENİ DÜNYAYA GETİRMİŞ bu doğum gününde de bir sonrakilerde de ömrünün sonuna kadar da senli benli bizli mükemmelll ötesi doğumgününüler yaşarız inşallah aşkım benimmmm.😘 </div>
+😭❤️</p>
+  </div>
+
+  <script>
+    function showPopup() {
+      const popup = document.getElementById("popup");
+      const song = document.getElementById("birthdaySong");
+
+      popup.style.display = "block";
+      song.play();
+
+      // Auto-hide the popup after 2 seconds
+      setTimeout(() => {
+        popup.style.display = "none";
+      }, 3000);
+    }
+
+    function showMessage() {
+      document.querySelector("h1").style.display = "none";
+      document.querySelectorAll("button").forEach(btn => btn.style.display = "none");
+      document.getElementById("popup").style.display = "none";
+      document.getElementById("message").style.display = "block";
+    }
+    </script>
+
+</body>
+</html>
